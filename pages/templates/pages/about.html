@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+  <section class="about-section">
+    <div class="about-card">
+      <div class="about-photo">
+        <img src="{% static 'images/brant.jpg' %}" alt="Photo of Brant">
+      </div>
+      <div class="about-content">
+        <p class="about-eyebrow">About Me</p>
+        <h1 class="about-name">Brant Robinson</h1>
+        <p class="about-text">
+          Hi, I’m Brant. I’m a problem-solver at heart who enjoys building things—whether that’s a website, a system, or something tangible with my hands. Professionally, I’ve worked across technology, software, and project management roles, often helping teams turn ideas into practical solutions. I enjoy work that blends structure with creativity and gives me the chance to keep learning and improving.
+        </p>
+        <p class="about-text">
+          Outside of work, I’m a husband and a dad to five kids, which keeps life busy in the best way. I value time with my family and enjoy activities that let me slow down and be creative. I play the saxophone, enjoy woodworking projects, and like staying active—tennis is one of my favorite ways to unwind and challenge myself.
+        </p>
+        <p class="about-text">
+          This portfolio is a snapshot of my journey, showcasing projects I’ve worked on and skills I’ve developed along the way. I’m motivated by curiosity, growth, and the satisfaction that comes from creating things that are useful, thoughtful, and well put together.
+        </p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

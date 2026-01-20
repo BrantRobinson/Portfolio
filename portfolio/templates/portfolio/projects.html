@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+  <h1>Projects</h1>
+  {% if projects %}
+    <div class="project-grid">
+      {% for project in projects %}
+        <article class="project-card">
+          <div class="project-header">
+            <h2>{{ project.title }}</h2>
+            <span class="project-year">{{ project.year }}</span>
+          </div>
+          <p>{{ project.description }}</p>
+          {% if project.repo_url %}
+            <p>
+              <a href="{{ project.repo_url }}" target="_blank" rel="noopener">Repository</a>
+            </p>
+          {% endif %}
+          {% if project.skills.all %}
+            <ul class="skill-list">
+              {% for skill in project.skills.all %}
+                <li>{{ skill.name }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="muted">No skills listed yet.</p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No projects loaded yet.</p>
+  {% endif %}
+{% endblock %}

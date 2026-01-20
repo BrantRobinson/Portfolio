@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">My Portfolio</div>
+        <nav class="site-nav">
+          <a href="{% url 'pages:home' %}">Home</a>
+          <a href="{% url 'pages:about' %}">About</a>
+          <a href="{% url 'pages:experience' %}">Experience</a>
+          <a href="{% url 'portfolio:projects' %}">Projects</a>
+          <a href="{% url 'pages:contact' %}">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <span>&copy; 2026 Brant. Built with Django.</span>
+        <div class="footer-links">
+          <a href="{% url 'pages:contact' %}">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
