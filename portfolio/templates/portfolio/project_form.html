@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}{% if form.instance.pk %}Edit Project{% else %}New Project{% endif %}{% endblock %}
+
+{% block content %}
+  <section class="py-4">
+    <div class="section-heading mb-3">
+      <div>
+        <p class="text-uppercase small text-muted mb-1">Projects</p>
+        <h1 class="h3 mb-0">{% if form.instance.pk %}Edit project{% else %}Add a project{% endif %}</h1>
+      </div>
+      <a class="btn btn-outline-secondary btn-sm" href="{% url 'portfolio:projects' %}">Back to projects</a>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-lg-5">
+            <form method="post" enctype="multipart/form-data" novalidate>
+              {% csrf_token %}
+              {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ form.non_field_errors }}
+                </div>
+              {% endif %}
+
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label" for="{{ form.title.id_for_label }}">Title</label>
+                  {{ form.title }}
+                  {{ form.title.errors }}
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="{{ form.description.id_for_label }}">Description</label>
+                  {{ form.description }}
+                  {{ form.description.errors }}
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="{{ form.year.id_for_label }}">Year</label>
+                  {{ form.year }}
+                  {{ form.year.errors }}
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label" for="{{ form.repo_url.id_for_label }}">Repository URL</label>
+                  {{ form.repo_url }}
+                  {{ form.repo_url.errors }}
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="{{ form.image.id_for_label }}">Image</label>
+                  {{ form.image }}
+                  {{ form.image.errors }}
+                  {% if form.instance.image %}
+                    <div class="form-text">Current image: {{ form.instance.image.name }}</div>
+                  {% endif %}
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="{{ form.skills.id_for_label }}">Skills</label>
+                  {{ form.skills }}
+                  {{ form.skills.errors }}
+                  <div class="form-text">Hold Ctrl (or Cmd on Mac) to select multiple skills.</div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <button class="btn btn-primary" type="submit">
+                  {% if form.instance.pk %}Save changes{% else %}Create project{% endif %}
+                </button>
+                <a class="btn btn-outline-secondary" href="{% url 'portfolio:projects' %}">Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

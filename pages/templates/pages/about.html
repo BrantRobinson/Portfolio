@@ -4,23 +4,77 @@
 {% block title %}About{% endblock %}
 
 {% block content %}
-  <section class="about-section">
-    <div class="about-card">
-      <div class="about-photo">
-        <img src="{% static 'images/brant.jpg' %}" alt="Photo of Brant">
+  <section class="py-4">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-4">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body text-center p-4">
+            <img class="about-photo rounded-circle mb-3" src="{% static 'images/brant.jpg' %}" alt="Photo of Brant">
+            <p class="text-uppercase small text-muted mb-1">About</p>
+            <h1 class="h4 mb-1">Brant Robinson</h1>
+            <p class="text-muted mb-0">Technology + Project Leadership</p>
+            <div class="d-flex justify-content-center gap-2 mt-3">
+              <span class="badge badge-soft">Django</span>
+              <span class="badge badge-soft">APIs</span>
+              <span class="badge badge-soft">Delivery</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="about-content">
-        <p class="about-eyebrow">About Me</p>
-        <h1 class="about-name">Brant Robinson</h1>
-        <p class="about-text">
-          Hi, I’m Brant. I’m a problem-solver at heart who enjoys building things—whether that’s a website, a system, or something tangible with my hands. Professionally, I’ve worked across technology, software, and project management roles, often helping teams turn ideas into practical solutions. I enjoy work that blends structure with creativity and gives me the chance to keep learning and improving.
-        </p>
-        <p class="about-text">
-          Outside of work, I’m a husband and a dad to five kids, which keeps life busy in the best way. I value time with my family and enjoy activities that let me slow down and be creative. I play the saxophone, enjoy woodworking projects, and like staying active—tennis is one of my favorite ways to unwind and challenge myself.
-        </p>
-        <p class="about-text">
-          This portfolio is a snapshot of my journey, showcasing projects I’ve worked on and skills I’ve developed along the way. I’m motivated by curiosity, growth, and the satisfaction that comes from creating things that are useful, thoughtful, and well put together.
-        </p>
+      <div class="col-lg-8">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4 p-lg-5">
+            <p class="text-uppercase small text-muted mb-2">Story</p>
+            <h2 class="display-6 mb-3">Building useful, well-structured experiences.</h2>
+            <p class="mb-3">
+              I focus on building web experiences that feel clear, confident, and easy to use. My background blends
+              technology leadership with hands-on development, which helps me translate ideas into practical, working
+              products.
+            </p>
+            <p class="mb-3">
+              I enjoy work that balances structure and creativity, and I care about doing the small things well:
+              maintainable code, thoughtful UI, and reliable delivery.
+            </p>
+            <p class="mb-0">
+              Outside of work, I spend time with my family, play saxophone, and dive into woodworking projects. Tennis
+              is one of my favorite ways to stay active and reset.
+            </p>
+            <div class="row g-3 mt-4">
+              <div class="col-md-6">
+                <div class="icon-tile h-100">
+                  <h3 class="h6 mb-2">Strengths</h3>
+                  <p class="mb-0 text-muted">Strategy, execution, and keeping teams aligned.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="icon-tile h-100">
+                  <h3 class="h6 mb-2">Focus</h3>
+                  <p class="mb-0 text-muted">Responsive UIs, data-driven apps, and clean workflows.</p>
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mt-2">
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Work style</p>
+                  <p class="stat-value">Calm + methodical</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Teams</p>
+                  <p class="stat-value">Cross-functional</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Values</p>
+                  <p class="stat-value">Clarity first</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

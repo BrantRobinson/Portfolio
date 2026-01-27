@@ -3,5 +3,97 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-  <h1>Welcome</h1>
+  <section class="hero">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <p class="text-uppercase small text-muted mb-2">Full-Stack Portfolio</p>
+        <h1 class="display-5 fw-bold mb-3">Building clear, useful digital experiences.</h1>
+        <p class="lead text-muted mb-4">
+          I blend product thinking, clean UI, and pragmatic engineering to deliver applications that are easy
+          to use and maintain.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-primary btn-lg" href="{% url 'portfolio:projects' %}">View projects</a>
+          <a class="btn btn-outline-secondary btn-lg" href="{% url 'pages:about' %}">About me</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-card h-100">
+          Put some thoughts here...  not sure what yet.
+          <!-- <div class="row g-3">
+            <div class="col-6">
+              <div class="stat-card">
+                <p class="stat-label">Focus</p>
+                <p class="stat-value">Django + APIs</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <p class="stat-label">UI</p>
+                <p class="stat-value">Bootstrap UI</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <p class="stat-label">Workflow</p>
+                <p class="stat-value">Agile delivery</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <p class="stat-label">Values</p>
+                <p class="stat-value">Clarity, momentum</p>
+              </div>
+            </div>
+          </div> -->
+          <div class="hero-divider"></div>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="badge badge-soft">Product strategy</span>
+            <span class="badge badge-soft">Responsive UI</span>
+            <span class="badge badge-soft">API design</span>
+            <span class="badge badge-soft">Team leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <div class="section-heading">
+      <div>
+        <p class="text-uppercase small text-muted mb-1">Capabilities</p>
+        <h2 class="h3 mb-0">What I build</h2>
+      </div>
+      <a class="link-primary text-decoration-none" href="{% url 'pages:experience' %}">See experience</a>
+    </div>
+    <div class="row g-4 mt-1">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle mb-3">UX</div>
+            <h3 class="h5">Product-led websites</h3>
+            <p class="text-muted mb-0">Clear navigation, strong hierarchy, and content that tells a story.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle mb-3">API</div>
+            <h3 class="h5">Data-driven apps</h3>
+            <p class="text-muted mb-0">Django views and models that keep data organized and easy to grow.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <div class="icon-circle mb-3">TBD</div>
+            <h3 class="h5">Reliable delivery</h3>
+            <p class="text-muted mb-0">Clean handoffs, documentation, and a focus on sustainable systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}

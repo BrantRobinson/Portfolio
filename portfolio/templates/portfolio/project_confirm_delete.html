@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Project{% endblock %}
+
+{% block content %}
+  <section class="py-4">
+    <div class="section-heading mb-3">
+      <div>
+        <p class="text-uppercase small text-muted mb-1">Projects</p>
+        <h1 class="h3 mb-0">Delete project</h1>
+      </div>
+      <a class="btn btn-outline-secondary btn-sm" href="{% url 'portfolio:projects' %}">Back to projects</a>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-lg-5">
+            <p class="mb-1 text-muted">You're about to remove:</p>
+            <h2 class="h4 mb-3">{{ object.title }}</h2>
+            <p class="text-muted">
+              This action cannot be undone. If you're not sure, go back and edit the project instead.
+            </p>
+            <form method="post">
+              {% csrf_token %}
+              <div class="d-flex flex-wrap gap-2 mt-3">
+                <button class="btn btn-danger" type="submit">Yes, delete</button>
+                <a class="btn btn-outline-secondary" href="{% url 'portfolio:projects' %}">Cancel</a>
+                <a class="btn btn-outline-primary" href="{% url 'portfolio:project_update' object.pk %}">Edit instead</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

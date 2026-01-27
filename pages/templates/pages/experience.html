@@ -1,8 +1,100 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Experience{% endblock %}
 
 {% block content %}
-  <h1>Experience</h1>
-  
+  <section class="py-4">
+    <div class="section-heading">
+      <div>
+        <p class="text-uppercase small text-muted mb-1">Experience</p>
+        <h1 class="h3 mb-0">Experience & Education</h1>
+      </div>
+      <p class="text-muted mb-0">Leadership, learning, and continuous improvement.</p>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex align-items-start gap-3">
+              <img class="experience-logo" src="{% static 'images/epsilon.png' %}" alt="Epsilon Systems Solutions logo">
+              <div>
+                <h2 class="h5 mb-1">Epsilon Systems Solutions, Inc</h2>
+                <div class="text-uppercase text-muted small mb-2">Vice President of Technology</div>
+                <p class="mb-3">
+                  Leading technology strategy, delivery, and team growth across client programs with a focus on
+                  clear communication and dependable execution.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge badge-soft">Leadership</span>
+                  <span class="badge badge-soft">Delivery</span>
+                  <span class="badge badge-soft">Systems</span>
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mt-4">
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Placeholder 1</p>
+                  <p class="stat-value">Place details here</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Placeholder 2</p>
+                  <p class="stat-value">Place details here</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stat-card">
+                  <p class="stat-label">Placeholder 2</p>
+                  <p class="stat-value">Place details here</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card border-0 shadow-sm h-100">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="h5 mb-4">Education</h2>
+            <div class="d-flex gap-3 mb-4">
+              <img class="experience-logo" src="{% static 'images/sdgku.jpg' %}" alt="SDGKU logo">
+              <div>
+                <div class="text-uppercase text-muted small mb-1">Certificate</div>
+                <h3 class="h6 mb-1">Full Stack Development</h3>
+                <p class="text-muted mb-0">Focused on Django, APIs, and responsive UI.</p>
+              </div>
+            </div>
+            <div class="d-flex gap-3 mb-4">
+              <img class="experience-logo" src="{% static 'images/wharton.png' %}" alt="Wharton School logo">
+              <div>
+                <div class="text-uppercase text-muted small mb-1">Certificate</div>
+                <h3 class="h6 mb-1">CTO Program</h3>
+                <p class="text-muted mb-0">Wharton School of Business, executive technology leadership.</p>
+              </div>
+            </div>
+            <div class="d-flex gap-3 mb-4">
+              <img class="experience-logo" src="{% static 'images/state university.png' %}" alt="State University logo">
+              <div>
+                <div class="text-uppercase text-muted small mb-1">Bachelor of Science</div>
+                <h3 class="h6 mb-1">Rhetoric and Communications</h3>
+                <p class="text-muted mb-0">Writing, storytelling, and audience-centered communication.</p>
+              </div>
+            </div>
+            <div class="d-flex gap-3">
+              <img class="experience-logo" src="{% static 'images/webster.jpg' %}" alt="Webster University logo">
+              <div>
+                <div class="text-uppercase text-muted small mb-1">Master of Arts</div>
+                <h3 class="h6 mb-1">International Relations</h3>
+                <p class="text-muted mb-0">Webster University.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}
