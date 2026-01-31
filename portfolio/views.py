@@ -7,7 +7,7 @@ from .models import Project
 # function based view shown in class, but I opted for class based to allow pagination easier
 class ProjectListView(ListView):
     model = Project
-    paginate_by = 4
+    paginate_by = 2
     template_name = 'portfolio/projects.html'
     context_object_name = 'projects'
 
