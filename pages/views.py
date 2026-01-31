@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth import logout
+from django.shortcuts import redirect, render
 from .forms import ContactForm
 from django.core.mail import send_mail
 from django.conf import settings
@@ -53,3 +54,8 @@ def contact(request):
         "success": success,
         "error_message": error_message,
     })
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('pages:home')

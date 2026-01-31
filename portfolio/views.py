@@ -1,3 +1,5 @@
+from django.contrib.auth.mixins import AccessMixin
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 
@@ -15,21 +17,28 @@ class ProjectListView(ListView):
         return Project.objects.prefetch_related('skills').order_by('-year', 'title')
 
 
-class ProjectCreateView(CreateView):
+class HomeRedirectIfNotLoggedInMixin(AccessMixin):
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect('pages:home')
+        return super().dispatch(request, *args, **kwargs)
+
+
+class ProjectCreateView(HomeRedirectIfNotLoggedInMixin, CreateView):
     model = Project
     form_class = ProjectForm
     template_name = 'portfolio/project_form.html'
     success_url = reverse_lazy('portfolio:projects')
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(HomeRedirectIfNotLoggedInMixin, UpdateView):
     model = Project
     form_class = ProjectForm
     template_name = 'portfolio/project_form.html'
     success_url = reverse_lazy('portfolio:projects')
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(HomeRedirectIfNotLoggedInMixin, DeleteView):
     model = Project
     template_name = 'portfolio/project_confirm_delete.html'
     success_url = reverse_lazy('portfolio:projects')
