@@ -16,7 +16,85 @@
       <div class="col-lg-7">
         <div class="card border-0 shadow-sm">
           <div class="card-body p-4 p-lg-5">
-            <form action="#" method="get">
+            <!-- <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button class="btn btn-primary btn-lg" type="submit">Send message</button>
+              <button class="btn btn-lg" type="reset">Reset Form</button>
+            </form> -->
+
+            <form method="post" novalidate>
+              {% csrf_token %}
+
+              {% if success %}
+                <div class="alert alert-success" role="alert">
+                  Your email was sent successfully. I'll get back to you soon.
+                </div>
+              {% endif %}
+
+              {% if error_message %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error_message }}
+                </div>
+              {% endif %}
+
+              {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                  {{ form.non_field_errors }}
+                </div>
+              {% endif %}
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="{{ form.name.id_for_label }}">
+                    {{ form.name.label }}
+                  </label>
+                  {{ form.name }}
+                  {% if form.name.errors %}
+                    <div class="invalid-feedback d-block">
+                      {{ form.name.errors|striptags }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="{{ form.email.id_for_label }}">
+                    {{ form.email.label }}
+                  </label>
+                  {{ form.email }}
+                  {% if form.email.errors %}
+                    <div class="invalid-feedback d-block">
+                      {{ form.email.errors|striptags }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="{{ form.message.id_for_label }}">
+                    {{ form.message.label }}
+                  </label>
+                  {{ form.message }}
+                  {% if form.message.errors %}
+                    <div class="invalid-feedback d-block">
+                      {{ form.message.errors|striptags }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="col-12">
+                  <button class="btn btn-primary btn-lg" type="submit">
+                    Send message
+                  </button>
+                  <button class="btn btn-lg" type="reset">
+                    Reset Form
+                  </button>
+                </div>
+              </div>
+            </form>
+
+  `
+            <!-- remove hard coded form and replace with django generated form above -->
+            <!-- <form action="#" method="get">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label" for="contactName">Name</label>
@@ -34,7 +112,7 @@
                   <button class="btn btn-primary btn-lg" type="submit">Send message</button>
                 </div>
               </div>
-            </form>
+            </form> -->
           </div>
         </div>
       </div>
